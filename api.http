@@ -7,3 +7,11 @@ content-type: application/json
   "email": "test@test.com",
   "extra": "extra"
 }
+
+
+###
+
+GET http://localhost:3000/
+
+###
+

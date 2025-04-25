@@ -1,11 +1,11 @@
 import { Global, Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_INTERCEPTOR } from '@nestjs/core';
-import config from 'src/config';
+import config from '../config';
 import { TransformResponseInterceptor } from './interceptors/transform-response/transform-response.interceptor';
 import { LoggerService } from './logger/logger.service';
 import { LoggerMiddleware } from './middleware/logger/logger.middleware';
-import { DatabaseService } from 'src/database/database.service';
+import { DatabaseService } from '../database/database.service';
 import { CacheModule } from '@nestjs/cache-manager';
 import { createKeyv } from '@keyv/redis';
 import { CacheService } from './cache/cache.service';

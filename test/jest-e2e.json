@@ -12,5 +12,7 @@
   },
   "setupFilesAfterEnv": [
     "./setup.ts"
-  ]
+  ],
+  "testTimeout": 30000,
+  "detectOpenHandles": true
 }

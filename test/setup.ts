@@ -28,11 +28,12 @@ beforeEach(async () => {
   server = app.getHttpServer();
   cacheService = app.get(CacheService);
   databaseService = app.get(DatabaseService);
-});
+}, 30000);
 
 afterEach(async () => {
   await cacheService.clear();
   await databaseService.clear();
-});
+  await app.close();
+}, 30000);
 
 export { app, server, cacheService, databaseService };

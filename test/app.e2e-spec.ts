@@ -3,8 +3,11 @@ import { server } from './setup';
 
 describe('AppController (e2e)', () => {
   it('/ (GET)', async () => {
-    const response = await request(server).get('/').expect(200);
-
-    expect(response.body.data).toBe('Hello World!');
-  }, 60000);
+    await request(server)
+      .get('/')
+      .expect(200)
+      .expect(({ body }) => {
+        expect(body.data).toBe('Hello World!');
+      });
+  });
 });

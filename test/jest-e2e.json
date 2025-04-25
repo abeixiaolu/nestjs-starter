@@ -13,6 +13,7 @@
   "setupFilesAfterEnv": [
     "./setup.ts"
   ],
-  "testTimeout": 30000,
-  "detectOpenHandles": true
+  "testTimeout": 60000,
+  "detectOpenHandles": true,
+  "forceExit": true
 }

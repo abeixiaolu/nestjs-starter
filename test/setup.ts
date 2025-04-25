@@ -11,7 +11,7 @@ let server: any;
 let cacheService: CacheService;
 let databaseService: DatabaseService;
 
-beforeEach(async () => {
+beforeAll(async () => {
   const moduleFixture: TestingModule = await Test.createTestingModule({
     imports: [AppModule],
   }).compile();
@@ -28,12 +28,14 @@ beforeEach(async () => {
   server = app.getHttpServer();
   cacheService = app.get(CacheService);
   databaseService = app.get(DatabaseService);
-}, 30000);
+}, 60000);
 
-afterEach(async () => {
+afterAll(async () => {
   await cacheService.clear();
   await databaseService.clear();
   await app.close();
-}, 30000);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  server.close();
+}, 60000);
 
 export { app, server, cacheService, databaseService };

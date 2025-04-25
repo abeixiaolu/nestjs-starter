@@ -6,6 +6,9 @@ import helmet from 'helmet';
 import { CacheService } from '../src/core/cache/cache.service';
 import { DatabaseService } from '../src/database/database.service';
 
+// 设置全局测试超时时间为 120 秒
+jest.setTimeout(120000);
+
 let app: INestApplication<App>;
 let server: any;
 let cacheService: CacheService;

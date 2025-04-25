@@ -31,9 +31,9 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  // await cacheService.clear();
-  // await databaseService.reset();
-  // await app.close();
+  await cacheService.clear();
+  await databaseService.reset();
+  await app.close();
 });
 
 export { app, server, cacheService, databaseService };

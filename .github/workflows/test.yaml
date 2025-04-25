@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build
+      - name: Generate Prisma Client
+        run: npx prisma generate
       - name: Run unit tests
         run: pnpm test
         env:
@@ -24,6 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/build
+      - name: Generate Prisma Client
+        run: npx prisma generate
       - name: Run e2e tests
         run: pnpm test:e2e
         env:

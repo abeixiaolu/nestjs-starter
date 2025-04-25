@@ -6,9 +6,6 @@ import helmet from 'helmet';
 import { CacheService } from '../src/core/cache/cache.service';
 import { DatabaseService } from '../src/database/database.service';
 
-// 设置全局测试超时时间为 120 秒
-jest.setTimeout(120000);
-
 let app: INestApplication<App>;
 let server: any;
 let cacheService: CacheService;
@@ -31,14 +28,12 @@ beforeAll(async () => {
   server = app.getHttpServer();
   cacheService = app.get(CacheService);
   databaseService = app.get(DatabaseService);
-}, 60000);
+});
 
 afterAll(async () => {
-  await cacheService.clear();
-  await databaseService.clear();
-  await app.close();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  server.close();
-}, 60000);
+  // await cacheService.clear();
+  // await databaseService.reset();
+  // await app.close();
+});
 
 export { app, server, cacheService, databaseService };

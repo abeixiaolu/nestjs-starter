@@ -1,5 +1,5 @@
-import * as request from 'supertest';
 import { server } from './setup';
+import * as request from 'supertest';
 
 describe('AppController (e2e)', () => {
   it('/ (GET)', async () => {

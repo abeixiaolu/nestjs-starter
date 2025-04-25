@@ -18,7 +18,6 @@
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
-    "noUncheckedIndexedAccess": true,
-    "allowJs": true
+    "noUncheckedIndexedAccess": true
   }
 }

@@ -34,9 +34,9 @@ describe('AppService', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', async () => {
+    it('should return "Hello World!"', () => {
       // cacheService.get.mockResolvedValue('HELLO WORLD');
-      const result = await appService.getHello();
+      const result = appService.getHello();
       expect(result).toBe('Hello World!');
     });
   });

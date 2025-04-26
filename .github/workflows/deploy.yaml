@@ -25,7 +25,6 @@ jobs:
           echo "PATH=$(npm config get prefix)/bin:$PATH" >> $GITHUB_ENV
       - name: Check Railway CLI version
         run: railway --version
-
       - name: Deploy to Railway
         run: railway up -d -s nestjs-starter
         env:

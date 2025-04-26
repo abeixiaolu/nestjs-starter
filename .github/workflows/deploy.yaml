@@ -17,12 +17,15 @@ jobs:
         run: pnpm prisma migrate deploy
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      - name: Generate Prisma Client
+        run: npx prisma generate
       - name: Install Railway CLI
         run: |
           npm install -g @railway/cli
           echo "PATH=$(npm config get prefix)/bin:$PATH" >> $GITHUB_ENV
       - name: Check Railway CLI version
         run: railway --version
+
       - name: Deploy to Railway
         run: railway up -d -s nestjs-starter
         env:
